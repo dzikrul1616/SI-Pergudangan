@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "892064345747",
+    "project_id": "si-pergudangan-af967",
+    "storage_bucket": "si-pergudangan-af967.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892064345747:android:c2628abababee7102aa766",
+        "android_client_info": {
+          "package_name": "com.example.pergudangan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892064345747-3pn3pn201gsufhdn00d5vld03df9crpv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pergudangan",
+            "certificate_hash": "03699779bce824e4f7435ba4a2a33a4abc8c423a"
+          }
+        },
+        {
+          "client_id": "892064345747-49mqq39223hfpufato8obecfhjdbc962.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTaFSHZsYqv6nQYpKxWAUpGPG3eiVT3Nc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892064345747-49mqq39223hfpufato8obecfhjdbc962.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
