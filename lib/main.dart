@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "SI Pergudangan",
-      initialRoute: Routes.BARANG_MASUK,
+      initialRoute: Routes.LOGIN,
       getPages: AppPages.routes,
     );
   }
