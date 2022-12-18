@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "SI Pergudangan",
-      initialRoute: Routes.BARANG_MASUK,
+      // aplikasi pertama kali akan dibuka pada halaman login
+      initialRoute: Routes.LOGIN,
       getPages: AppPages.routes,
     );
   }

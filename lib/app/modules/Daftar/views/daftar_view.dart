@@ -9,6 +9,7 @@ import 'package:uas_apps/app/modules/home/views/home_view.dart';
 import '../controllers/daftar_controller.dart';
 
 class DaftarView extends GetView<DaftarController> {
+  // control text untuk form dan validasi
   final usernameCotroller = TextEditingController();
   final emailCotroller = TextEditingController();
   final passwordCotroller = TextEditingController();
@@ -54,6 +55,7 @@ class DaftarView extends GetView<DaftarController> {
                         const SizedBox(
                           height: 30.0,
                         ),
+                        // teks buat akun
                         Center(
                             child: Text(
                           'Buat Akun Baru',
@@ -64,6 +66,7 @@ class DaftarView extends GetView<DaftarController> {
                         const SizedBox(
                           height: 20.0,
                         ),
+                        // form username dengan controller
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 35.0),
                           child: TextFormField(
@@ -90,6 +93,7 @@ class DaftarView extends GetView<DaftarController> {
                         const SizedBox(
                           height: 10.0,
                         ),
+                        // form email dengan controller
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 35.0),
                           child: TextFormField(
@@ -115,6 +119,7 @@ class DaftarView extends GetView<DaftarController> {
                             onChanged: (value) {},
                           ),
                         ),
+                        // form password dengan controller beserta obs text agar tidak terlihat
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 25.0),
                           child: Container(
@@ -145,8 +150,10 @@ class DaftarView extends GetView<DaftarController> {
                         const SizedBox(
                           height: 20.0,
                         ),
+                        // tombol daftar 
                         ElevatedButton(
                           onPressed: () {
+                            // melakukan pendaftaran menggunakan email sesuai dengan controller text
                             FirebaseAuth.instance
                                 .createUserWithEmailAndPassword(
                                     email: emailCotroller.text,
@@ -156,7 +163,7 @@ class DaftarView extends GetView<DaftarController> {
                                   .collection('users')
                                   .doc(value.user!.uid)
                                   .set({"email": value.user!.email});
-
+                              // jika berhasil akan menuju halaman home
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -165,6 +172,7 @@ class DaftarView extends GetView<DaftarController> {
                               print("Error ${error.toString()}");
                             });
                           },
+                          // style tombol
                           child: Container(
                             height: 50,
                             width: 150,
@@ -187,6 +195,7 @@ class DaftarView extends GetView<DaftarController> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            //text statis
                             Text(
                               'Sudah punya akun? ',
                               style: TextStyle(
@@ -198,6 +207,7 @@ class DaftarView extends GetView<DaftarController> {
                                     transition: Transition.circularReveal,
                                     duration: Duration(seconds: 2));
                               },
+                              // text yang dapat di klik menuju halaman lohin
                               child: Text(
                                 "Masuk disini",
                                 textAlign: TextAlign.center,

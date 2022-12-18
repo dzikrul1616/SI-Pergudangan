@@ -21,7 +21,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-
+  //route (alamat) yang digunakan ketika ingin melakukan perpindahan page
   static const INITIAL = Routes.HOME;
 
   static final routes = [

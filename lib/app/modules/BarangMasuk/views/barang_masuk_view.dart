@@ -8,6 +8,8 @@ import 'package:uas_apps/app/modules/home/views/home_view.dart';
 
 import '../controllers/barang_masuk_controller.dart';
 
+// halaman untuk menampilkan data barang masuk
+
 class BarangMasukView extends StatefulWidget {
   const BarangMasukView({Key? key}) : super(key: key);
 
@@ -34,11 +36,13 @@ class _BarangMasukViewState extends State<BarangMasukView> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Container(
+          // stream untuk menampilkan data yang sudah diinput dan dipanggil dari firestore menggunakan firebase_storage
           child: StreamBuilder(
               stream:
                   FirebaseFirestore.instance.collection('barang').snapshots(),
               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.hasData) {
+                  //list builder untuk membuat widget sesuai data yang telah di input
                   return ListView.builder(
                     itemCount: snapshot.data!.docs.length,
                     itemBuilder: (context, index) => Container(
@@ -48,15 +52,11 @@ class _BarangMasukViewState extends State<BarangMasukView> {
                             height: 60.0,
                           ),
                           Container(
-                            // height: 55,
-                            // width: 500,
-                            // decoration: BoxDecoration(
-                            //   color: Color(0xff002050),
-                            //   borderRadius: BorderRadius.circular(8),
-                            // ),
                             child: Center(
+                              // data akan ditampilkan dalam bentuk sejajar dan dipanggil sesuai isi collection 'barang'
                               child: Row(
                                 children: [
+                                  // kontraktor
                                   Container(
                                     height: 40,
                                     width: 80,
@@ -79,6 +79,7 @@ class _BarangMasukViewState extends State<BarangMasukView> {
                                   const SizedBox(
                                     width: 10.0,
                                   ),
+                                  // jenis barang
                                   Container(
                                     height: 40,
                                     width: 80,
@@ -101,6 +102,7 @@ class _BarangMasukViewState extends State<BarangMasukView> {
                                   const SizedBox(
                                     width: 10.0,
                                   ),
+                                  // no pol truk
                                   Container(
                                     height: 40,
                                     width: 80,
@@ -123,6 +125,7 @@ class _BarangMasukViewState extends State<BarangMasukView> {
                                   const SizedBox(
                                     width: 10.0,
                                   ),
+                                  // nomor kontak
                                   Container(
                                     height: 40,
                                     width: 80,
@@ -159,139 +162,3 @@ class _BarangMasukViewState extends State<BarangMasukView> {
     );
   }
 }
-
-// class ItemBarang extends StatelessWidget {
-//   final List<DocumentSnapshot> listBarang;
-
-//   const ItemBarang({Key? key, this.listBarang}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {}
-// }
-
-// class BarangMasukView extends StatelessWidget {
-//   final List<DocumentSnapshot> listBarang;
-
-//   const BarangMasukView({super.key, required this.listBarang});
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           backgroundColor: Color.fromARGB(255, 0, 70, 128),
-//           title: const Text('Barang Masuk'),
-//           centerTitle: true,
-//           leading: IconButton(
-//               onPressed: () {
-//                 Get.to(() => HomeView(),
-//                     transition: Transition.circularReveal,
-//                     duration: Duration(seconds: 2));
-//               },
-//               icon: Icon(Icons.arrow_back)),
-//         ),
-//         body: SafeArea(
-//             child: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 30.0),
-//           child:
-//               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-//             const SizedBox(
-//               height: 20.0,
-//             ),
-//             Text(
-//               'Masukkan Data Baru',
-//               style: TextStyle(
-//                 fontSize: 20,
-//                 fontWeight: FontWeight.bold,
-//                 color: Color.fromARGB(255, 31, 76, 155),
-//               ),
-//             ),
-//             const SizedBox(
-//               height: 10.0,
-//             ),
-//             Row(
-//               children: [
-//                 Text(
-//                   'Nomor',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                     color: Color.fromARGB(255, 229, 122, 0),
-//                   ),
-//                 ),
-//                 const SizedBox(
-//                   width: 50.0,
-//                 ),
-//                 Text(
-//                   '122345',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                     color: Color.fromARGB(255, 147, 147, 147),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             const SizedBox(
-//               height: 10.0,
-//             ),
-//             Row(
-//               children: [
-//                 Text(
-//                   'Tanggal',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                     color: Color.fromARGB(255, 229, 122, 0),
-//                   ),
-//                 ),
-//                 const SizedBox(
-//                   width: 41.0,
-//                 ),
-//                 Text(
-//                   DateFormat('dd-MM-yyyy').format(DateTime.now()),
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                     color: Color.fromARGB(255, 147, 147, 147),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             const SizedBox(
-//               height: 10.0,
-//             ),
-//             Row(
-//               children: [
-//                 Text(
-//                   'Jam',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                     color: Color.fromARGB(255, 229, 122, 0),
-//                   ),
-//                 ),
-//                 const SizedBox(
-//                   width: 73.0,
-//                 ),
-//                 Text(
-//                   DateFormat('KK:mm:ss a').format(DateTime.now()),
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.bold,
-//                     color: Color.fromARGB(255, 147, 147, 147),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             const SizedBox(
-//               height: 20.0,
-//             ),
-//             ListView.builder(
-//                 itemCount: listBarang == null ? 0 : listBarang.length,
-//                 itemBuilder: (context, i) {
-//                   String JenisBarang =
-//                       listBarang[i].data['Jenis barang'].toString();
-//                 })
-//           ]),
-//         )));
-//   }
-// }

@@ -13,6 +13,7 @@ import 'package:uas_apps/app/modules/Login/views/login_view.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+  // final user ini digunakan untuk memanggil nama user akun 
   final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: Color.fromARGB(255, 31, 76, 155),
         drawer: Drawer(
           child: ListView(
+              // slide dari kanan ke kiri berisikan profil, email akun
             children: [
               UserAccountsDrawerHeader(
                 accountName: Text(user.displayName ?? ''),
@@ -29,12 +31,14 @@ class HomeView extends GetView<HomeController> {
                   color: Color.fromARGB(255, 0, 32, 80),
                 ),
               ),
+              // tombol logout
               ListTile(
                 leading: const Icon(
                   Icons.logout,
                 ),
                 title: const Text("Logout"),
                 onTap: () {
+                  // tombol logout menggunakan firebase out mengarah ke halaman login apabila berhasil
                   FirebaseAuth.instance.signOut().then((value) {
                     print("Signed Out");
                     Navigator.push(context,
@@ -45,6 +49,7 @@ class HomeView extends GetView<HomeController> {
             ],
           ),
         ),
+        // isi dari halaman home
         body: SafeArea(
             child: Column(
           children: [
@@ -56,6 +61,7 @@ class HomeView extends GetView<HomeController> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  // tombol keluar
                   IconButton(
                     onPressed: () {
                       FirebaseAuth.instance.signOut().then((value) {
@@ -76,6 +82,7 @@ class HomeView extends GetView<HomeController> {
             const SizedBox(
               height: 20.0,
             ),
+            // text statis
             Text(
               'SISTEM INFORMASI PERGUDANGAN',
               textAlign: TextAlign.center,
@@ -93,6 +100,7 @@ class HomeView extends GetView<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
+                    // icon barang masuk navigasi kearah barang masuk
                     children: [
                       Container(
                         height: 50,
@@ -113,6 +121,7 @@ class HomeView extends GetView<HomeController> {
                       const SizedBox(
                         height: 5.0,
                       ),
+                      // judul icon
                       Text(
                         'Barang',
                         textAlign: TextAlign.center,
@@ -136,6 +145,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                   Column(
                     children: [
+                      // icon barang kelaur navigasi kearah barang keluar
                       Container(
                         height: 50,
                         width: 50,
@@ -155,6 +165,7 @@ class HomeView extends GetView<HomeController> {
                       const SizedBox(
                         height: 5.0,
                       ),
+                      // judul icon
                       Text(
                         'Barang',
                         textAlign: TextAlign.center,
@@ -178,6 +189,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                   Column(
                     children: [
+                      // icon jenis barang navigasi kearah jenis barang 
                       Container(
                         height: 50,
                         width: 50,
@@ -197,6 +209,7 @@ class HomeView extends GetView<HomeController> {
                       const SizedBox(
                         height: 5.0,
                       ),
+                      // judul icon
                       Text(
                         'Jenis',
                         textAlign: TextAlign.center,
@@ -220,6 +233,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                   Column(
                     children: [
+                      // icon data kontraktor navigasi kearah data kontraktor
                       Container(
                         height: 50,
                         width: 50,
@@ -239,6 +253,7 @@ class HomeView extends GetView<HomeController> {
                       const SizedBox(
                         height: 5.0,
                       ),
+                      // icon judul
                       Text(
                         'Data',
                         textAlign: TextAlign.center,
@@ -263,6 +278,7 @@ class HomeView extends GetView<HomeController> {
             const SizedBox(
               height: 50.0,
             ),
+            // gambar assets 
             Container(
               height: 200,
               child: Image.asset('assets/home.png'),
@@ -272,12 +288,14 @@ class HomeView extends GetView<HomeController> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              // tombol masukkan data yang akan menuju ke barang keluar yang fungsinya sebagai menambahkan data
               child: ElevatedButton(
                 onPressed: () {
                   Get.to(() => BarangKeluarView(),
                       transition: Transition.circularReveal,
                       duration: Duration(seconds: 2));
                 },
+                // button stylenya 
                 child: Container(
                   width: 400,
                   height: 50,
@@ -292,6 +310,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
+                // warna button
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,
                 ),
@@ -302,12 +321,14 @@ class HomeView extends GetView<HomeController> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              // tombol data barang masuk navigasi kearah barang masuk
               child: ElevatedButton(
                 onPressed: () {
                   Get.to(() => BarangMasukView(),
                       transition: Transition.circularReveal,
                       duration: Duration(seconds: 2));
                 },
+                // style dari tombol
                 child: Container(
                   width: 400,
                   height: 50,
@@ -322,6 +343,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
+                // warna tombol
                 style: ElevatedButton.styleFrom(
                   primary: Color.fromARGB(255, 0, 32, 80),
                 ),

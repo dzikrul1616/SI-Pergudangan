@@ -17,6 +17,7 @@ class KontraktorView extends StatefulWidget {
 class KontraktorViewState extends State<KontraktorView> {
   @override
   Widget build(BuildContext context) {
+    // app bar diatas
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 70, 128),
@@ -39,6 +40,7 @@ class KontraktorViewState extends State<KontraktorView> {
               const SizedBox(
                 height: 20.0,
               ),
+              // judul setelah juddul pada app bar
               Text(
                 'Data Kontraktor',
                 style: TextStyle(
@@ -51,6 +53,7 @@ class KontraktorViewState extends State<KontraktorView> {
                 height: 10.0,
               ),
               Row(
+                // teks statis 
                 children: [
                   Text(
                     'ID',
@@ -76,6 +79,7 @@ class KontraktorViewState extends State<KontraktorView> {
               const SizedBox(
                 height: 10.0,
               ),
+              // teks statis 
               Row(
                 children: [
                   Text(
@@ -102,6 +106,7 @@ class KontraktorViewState extends State<KontraktorView> {
               const SizedBox(
                 height: 10.0,
               ),
+              // teks statis 
               Row(
                 children: [
                   Text(
@@ -128,6 +133,7 @@ class KontraktorViewState extends State<KontraktorView> {
               const SizedBox(
                 height: 10.0,
               ),
+              // teks statis 
               Row(
                 children: [
                   Text(
@@ -159,6 +165,7 @@ class KontraktorViewState extends State<KontraktorView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      // membuat persegi warna biru tua
                       child: Container(
                         height: 55,
                         width: 120,
@@ -182,6 +189,7 @@ class KontraktorViewState extends State<KontraktorView> {
                       width: 10.0,
                     ),
                     Flexible(
+                      // membuat persegi warna biru tua
                       child: Container(
                         height: 55,
                         width: 300,
@@ -215,6 +223,7 @@ class KontraktorViewState extends State<KontraktorView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      // membuat persegi warna putih
                       child: Container(
                         height: 55,
                         width: 120,
@@ -238,6 +247,7 @@ class KontraktorViewState extends State<KontraktorView> {
                       width: 10.0,
                     ),
                     Flexible(
+                      // membuat persegi warna putih
                       child: Container(
                         height: 55,
                         width: 300,
@@ -271,6 +281,7 @@ class KontraktorViewState extends State<KontraktorView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      // membuat persegi warna putih
                       child: Container(
                         height: 55,
                         width: 120,
@@ -294,6 +305,7 @@ class KontraktorViewState extends State<KontraktorView> {
                       width: 10.0,
                     ),
                     Flexible(
+                      // membuat persegi warna putih
                       child: Container(
                         height: 55,
                         width: 300,
@@ -319,6 +331,7 @@ class KontraktorViewState extends State<KontraktorView> {
                   ],
                 ),
               ),
+              // spasi
               const SizedBox(
                 height: 20.0,
               ),
@@ -327,6 +340,7 @@ class KontraktorViewState extends State<KontraktorView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // tombol edit yang belum dapat mengedit data
                     ElevatedButton(
                       onPressed: () {
                         Get.to(() => HomeView(),

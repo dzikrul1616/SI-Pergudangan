@@ -9,6 +9,7 @@ import 'package:uas_apps/app/modules/home/views/home_view.dart';
 
 import '../controllers/barang_keluar_controller.dart';
 
+// Nama class barang keluar tapi fungsinya untuk tambah data
 class BarangKeluarView extends StatefulWidget {
   const BarangKeluarView({Key? key}) : super(key: key);
 
@@ -17,6 +18,7 @@ class BarangKeluarView extends StatefulWidget {
 }
 
 class _BarangKeluarViewState extends State<BarangKeluarView> {
+  //controller text untuk CRUD
   final jenisController = TextEditingController();
   final nomorController = TextEditingController();
   final kontraktorController = TextEditingController();
@@ -27,6 +29,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference barang = firestore.collection('barang');
     return Scaffold(
+      // bar aplikasi 
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 70, 128),
         title: const Text('Tambah Barang Masuk'),
@@ -39,6 +42,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
             },
             icon: Icon(Icons.arrow_back)),
       ),
+      // safe area agar tidak nabrak dengan kerai notifikasi 
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -48,6 +52,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
               const SizedBox(
                 height: 20.0,
               ),
+              // teks 
               Text(
                 'Masukkan Data Baru',
                 style: TextStyle(
@@ -59,6 +64,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
               const SizedBox(
                 height: 10.0,
               ),
+              // row teks dengan data statis
               Row(
                 children: [
                   Text(
@@ -87,6 +93,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
               ),
               Row(
                 children: [
+                  // tanggal data static
                   Text(
                     'Tanggal',
                     style: TextStyle(
@@ -98,6 +105,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
                   const SizedBox(
                     width: 41.0,
                   ),
+                  // format teks hari berdasarkan waktu saat ini menggunakan package intl dari Pubsc
                   Text(
                     DateFormat('dd-MM-yyyy').format(DateTime.now()),
                     style: TextStyle(
@@ -124,6 +132,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
                   const SizedBox(
                     width: 73.0,
                   ),
+                  // format teks hari berdasarkan waktu saat ini menggunakan package intl dari Pubsc
                   Text(
                     DateFormat('KK:mm:ss a').format(DateTime.now()),
                     style: TextStyle(
@@ -142,6 +151,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      //jenis teks barang
                       child: Text(
                         'Jenis Barang',
                         style: TextStyle(
@@ -154,6 +164,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
                     const SizedBox(
                       width: 30.0,
                     ),
+                    // menggunakan flexible agar form dapat muncul ketika dijadikan row
                     Flexible(
                         child: TextField(
                       controller: jenisController,
@@ -178,6 +189,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
               const SizedBox(
                 height: 10.0,
               ),
+              //form nomor kotnak
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.0),
                 child: Row(
@@ -219,6 +231,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
               const SizedBox(
                 height: 10.0,
               ),
+              // form id kotnraktor
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.0),
                 child: Row(
@@ -260,6 +273,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
               const SizedBox(
                 height: 10.0,
               ),
+              // form no pol truk
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.0),
                 child: Row(
@@ -301,6 +315,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
               const SizedBox(
                 height: 10.0,
               ),
+               // form timbangan
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.0),
                 child: Row(
@@ -347,8 +362,10 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // save button 
                     ElevatedButton(
                       onPressed: () {
+                        // menggunakan controller untuk menambahkan data yang terdiri dari data berikut :
                         barang.add({
                           'Tanggal': DateFormat('dd-MM-yyyy KK:mm:ss a')
                               .format(DateTime.now()),
@@ -365,6 +382,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
                         trukController.text = '';
                         kontraktorController.text = '';
                         timbanganController.text = '';
+                        // dengan navigasi kearah barang masuk
                         Get.to(() => BarangMasukView(),
                             transition: Transition.circularReveal,
                             duration: Duration(seconds: 2));
@@ -382,6 +400,7 @@ class _BarangKeluarViewState extends State<BarangKeluarView> {
                           ),
                         ),
                       ),
+                      // warna button
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 0, 70, 128),
                       ),

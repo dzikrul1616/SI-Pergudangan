@@ -16,6 +16,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // app bar diatas
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 70, 128),
         title: const Text('Jenis Barang'),
@@ -37,6 +38,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
               const SizedBox(
                 height: 20.0,
               ),
+              // text statis
               Text(
                 'Data Jenis Barang',
                 style: TextStyle(
@@ -53,6 +55,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 120,
@@ -62,6 +65,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                         ),
                         child: Center(
                           child: Text(
+                            // judul kotak jenis 
                             'Jenis',
                             style: TextStyle(
                               fontSize: 15,
@@ -76,6 +80,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                       width: 10.0,
                     ),
                     Flexible(
+                       // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 300,
@@ -84,6 +89,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Center(
+                          // text stratis jumlah KG
                           child: Text(
                             'Jumlah (KG)',
                             style: TextStyle(
@@ -109,6 +115,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 120,
@@ -132,6 +139,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                       width: 10.0,
                     ),
                     Flexible(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 300,
@@ -165,6 +173,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 120,
@@ -188,6 +197,123 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                       width: 10.0,
                     ),
                     Flexible(
+                      // widget membuat persegi 
+                      child: Container(
+                        height: 55,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Center(
+                          child: Text(
+                            '170',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff002050),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15.0,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                child: Row(
+                  children: <Widget>[
+                    Center(
+                      // widget membuat persegi 
+                      child: Container(
+                        height: 55,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Omega',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff002050),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    Flexible(
+                      // widget membuat persegi 
+                      child: Container(
+                        height: 55,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Center(
+                          child: Text(
+                            '28',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff002050),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15.0,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                child: Row(
+                  children: <Widget>[
+                    Center(
+                      // widget membuat persegi 
+                      child: Container(
+                        height: 55,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'RajaBiru',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff002050),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    Flexible(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 300,
@@ -222,6 +348,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                   children: <Widget>[
                     Center(
                       child: Container(
+                        // widget membuat persegi 
                         height: 55,
                         width: 120,
                         decoration: BoxDecoration(
@@ -244,6 +371,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                       width: 10.0,
                     ),
                     Flexible(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 300,
@@ -277,6 +405,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                 child: Row(
                   children: <Widget>[
                     Center(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 120,
@@ -300,118 +429,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                       width: 10.0,
                     ),
                     Flexible(
-                      child: Container(
-                        height: 55,
-                        width: 300,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(
-                          child: Text(
-                            '170',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff002050),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                child: Row(
-                  children: <Widget>[
-                    Center(
-                      child: Container(
-                        height: 55,
-                        width: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Omega',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff002050),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Flexible(
-                      child: Container(
-                        height: 55,
-                        width: 300,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(
-                          child: Text(
-                            '28',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff002050),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                child: Row(
-                  children: <Widget>[
-                    Center(
-                      child: Container(
-                        height: 55,
-                        width: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'RajaBiru',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff002050),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Flexible(
+                      // widget membuat persegi 
                       child: Container(
                         height: 55,
                         width: 300,
@@ -445,6 +463,7 @@ class _JenisBarangViewState extends State<JenisBarangView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // tomboledit tanpa mengedit data
                     ElevatedButton(
                       onPressed: () {
                         Get.to(() => HomeView(),
