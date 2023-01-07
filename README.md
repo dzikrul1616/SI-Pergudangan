@@ -1,4 +1,4 @@
-![logo](https://github.com/dzikrul1616/dzikrul1616/blob/main/Car%20Enthusiast.png)
+![logo](https://github.com/dzikrul1616/dzikrul1616/blob/main/Sistem%20Informasi%20Pergudangan.png)
 
 A few resources to get you started if this is your first Flutter project:
 
